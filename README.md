@@ -80,6 +80,7 @@ npm run dev
 ---  
 
 ## **🎯 Future Enhancements**  
+🔹 **Integrating BlockChain & Web3 tchnologies** for securing user chats
 🔹 **Improved AI therapy responses** based on deeper emotion tracking  
 🔹 **Better real-time voice emotion detection** with advanced training  
 🔹 **Seamless facetime AI interaction** using **MediaPipe for real-time facial analysis**  
