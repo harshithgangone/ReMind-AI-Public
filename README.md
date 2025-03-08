@@ -53,7 +53,6 @@
 
 ### **💻 Backend Setup (Node.js + Express + MongoDB)**
 ```bash
-git clone https://github.com/YourRepo/ReMindAI.git
 cd backend
 npm install
 npm start
