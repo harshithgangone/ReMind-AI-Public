@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none !important; /* Force custom cursor everywhere */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(138, 162, 211, 0.5);
+  position: fixed;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+.cursor-follower {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(138, 162, 211, 0.1);
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.3s ease;
+}
+
+.cursor.active {
+  transform: scale(0.5);
+}
+
+.cursor-follower.active {
+  transform: scale(1.5);
+}
+
+/* Update floating object animation for more random movement */
+.floating-object {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.6; /* Increased visibility */
+  z-index: -1;
+  animation-name: float;
+  animation-duration: var(--duration, 15s);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(var(--x1, 10px), var(--y1, -15px)) rotate(var(--r1, 5deg));
+  }
+  40% {
+    transform: translate(var(--x2, -15px), var(--y2, -5px)) rotate(var(--r2, -3deg));
+  }
+  60% {
+    transform: translate(var(--x3, 15px), var(--y3, 10px)) rotate(var(--r3, 7deg));
+  }
+  80% {
+    transform: translate(var(--x4, -5px), var(--y4, -10px)) rotate(var(--r4, -5deg));
+  }
+  100% {
+    transform: translate(var(--x5, 10px), var(--y5, 15px)) rotate(var(--r5, 3deg));
+  }
+}
+
+/* Add scroll reveal animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced feature card hover effects */
+.feature-card {
+  animation: fadeInUp 0.5s ease-out;
+  animation-fill-mode: both;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(138, 162, 211, 0.2) 0%, rgba(156, 137, 184, 0.2) 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+}
+
+.feature-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-icon {
+  transition: transform 0.4s ease;
+}
+
+/* Let's Start animation */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.lets-start-animation {
+  animation: zoomInOut 2s forwards;
+}
+
+/* Add fade-in animation for home page */
+.home-fade-in {
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Advanced letter animation for loader */
+.letter-animation {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: letterAppear 0.5s forwards;
+}
+
+@keyframes letterAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Updated startup animation */
+.startup-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.startup-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.startup-human {
+  position: absolute;
+  right: -100%;
+  animation: slideInFromRight 1.5s ease-out forwards;
+}
+
+.startup-ai {
+  position: absolute;
+  left: -100%;
+  animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+.startup-logo {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: logoZoomIn 3s ease-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes slideInFromRight {
+  to {
+    right: 55%;
+  }
+}
+
+@keyframes slideInFromLeft {
+  to {
+    left: 55%;
+  }
+}
+
+@keyframes logoZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+.notification {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1000;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+

@@ -1,0 +1,49 @@
+.inbox-message {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(20px);
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4eaff 100%);
+}
+
+.inbox-message.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.inbox-message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.inbox-message-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.inbox-message-content {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+.liked svg {
+  color: #ff6b6b;
+  animation: heartBeat 0.3s ease-in-out;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+

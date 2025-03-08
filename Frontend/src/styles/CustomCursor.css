@@ -1,0 +1,45 @@
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(106, 140, 175, 0.5);
+  border: 2px solid #6a8caf;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  mix-blend-mode: difference;
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(166, 193, 238, 0.5);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  transition: transform 0.1s ease;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.hidden,
+.cursor-trail.hidden {
+  opacity: 0;
+}
+
+.custom-cursor.clicked {
+  width: 16px;
+  height: 16px;
+  background-color: rgba(166, 193, 238, 0.8);
+}
+
+.custom-cursor.link-hovered {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(166, 193, 238, 0.2);
+  border-color: #a6c1ee;
+}
+
