@@ -90,7 +90,7 @@ npm run dev
 ## **📩 Contact & Contributions**  
 🛠️ **Developed by Team DevXO**  
 📌 _Contributions are welcome! Feel free to submit pull requests._  
-📧 **Contact:** your-email@example.com  
+📧 **Contact:** harshith.gangone@gmail.com
 
 🚀 **Let’s build a future where AI supports mental well-being!** 💙  
 
